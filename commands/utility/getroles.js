@@ -16,7 +16,7 @@ module.exports = {
       
         }
     });
-    var json = JSON.stringify(rolelistJSON);
+    var json = JSON.stringify(rolelistJSON, null, "\t");
     fs.writeFile('./ressources/roleList.json', json, 'utf8', err => {
         if (err) {
             console.log('Error writing file', err);

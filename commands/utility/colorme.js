@@ -1,6 +1,6 @@
 var fs = require("fs");
 var colorRegex = /^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$/;
-var colorList = JSON.parse(fs.readFileSync("colors.json", "utf8"));
+var colorList = JSON.parse(fs.readFileSync("./ressources/colors.json", "utf8"));
 let rolelistJSON;
 //var roleList = require.main.require('./ressources/roleList.json');
 function checkValidColor(color) {
@@ -10,7 +10,7 @@ function checkValidColor(color) {
   return false;
 }
 function writeJSON() {
-  let json = JSON.stringify(rolelistJSON);
+  let json = JSON.stringify(rolelistJSON, null, "\t");
   fs.writeFile("./ressources/roleList.json", json, "utf8", (err) => {
     if (err) {
       console.log("Error writing file", err);
@@ -133,7 +133,7 @@ module.exports = {
           "Please supply a color as text (one word) or as the Hex Value (i.e. #32CD32)"
         )
         .then((msg) => {
-          msg.delete(15000);
+          msg.delete({timeout:15000});
         });
     }
   },

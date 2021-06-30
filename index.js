@@ -9,8 +9,8 @@ require('dotenv').config();
 //const db = require('./db');
 
 var fs = require('fs');
-
-var memes = require('./memes.json');
+//Debricated
+//var memes = require('./memes.json');
 //Command folder with all commands
 let prefix = process.env.PREFIX;
 var timeRegex = /^(?:(?:([01]?\d|2[0-3]):)([0-5]?\d):)([0-5]?\d)$/;
@@ -54,8 +54,8 @@ for (const file of eventFiles) {
 * JSON FILES
 */
 
-var channelList = JSON.parse(fs.readFileSync('channels.json', 'utf8'));
-var colorList = JSON.parse(fs.readFileSync('colors.json', 'utf8'));
+var channelList = JSON.parse(fs.readFileSync('./ressources/channels.json', 'utf8'));
+var colorList = JSON.parse(fs.readFileSync('./ressources/colors.json', 'utf8'));
 
 //connects the bot to the discord users
 console.log(process.env.BOT_TOKEN);

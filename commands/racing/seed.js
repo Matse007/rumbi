@@ -1,7 +1,7 @@
 module.exports = {
-    name: 'help',
-    description: "this is a ping command!",
+    name: 'seed',
+    description: "this command is used to generate a random bingo card seed for A Hat in Time Bingo",
     execute(message, args){
-        //TODO Implement help command
+        message.channel.send("https://shockwve.github.io/?seed=" + Math.floor(Math.random() * 999999) + 1);
     }
 }

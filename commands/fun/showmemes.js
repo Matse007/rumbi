@@ -1,7 +1,8 @@
 let memes;
 var fs = require("fs");
+//TODO: Make an embedd with all memes
 module.exports = {
-  name: "addmeme",
+  name: "showmeme",
   description: "this is a meme command!",
   guildOnly: true,
   execute(message, args) {
