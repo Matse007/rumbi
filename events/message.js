@@ -1,6 +1,12 @@
+let botTalkChannelId = 415000409963495424;
+const memeaddon = require('../addons/meme');
 module.exports = {
 	name: 'message',
 	execute(message, client, prefix) {
+		//TODO TOGGLE THIS BEFORE PUTTING THIS ON LIVE
+		//set botTalkChannelId to the wanted channel. Can be modified. As of writing this, its disabled entirely.
+		//if (message.channel.id != botTalkChannelId) return;
+		memeaddon.execute(message);
 		if (!message.content.startsWith(prefix) || message.author.bot) return;
 
 	const args = message.content.slice(prefix.length).trim().split(/ +/);
