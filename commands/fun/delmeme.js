@@ -4,6 +4,7 @@ module.exports = {
   name: "delmeme",
   description: "this is a meme command!",
   guildOnly: true,
+  hidden: true,
   execute(message, args) {
     if (
       message.member.roles.cache.find((role) => (role.name = "Admin")) ||

@@ -1,6 +1,8 @@
 module.exports = {
   name: "removerole",
-  description: "this command is used to remove the racing role.",
+  description: "Use this command to remove the 'racing' role from your roles.",
+  hidden: false,
+  guildOnly: false,
   execute(message, args) {
       //We are saving the racing role for later use, then determine if the user has a role called racing.
       //If that is the case, the role will be removed and the message will be deleted shortly after. 

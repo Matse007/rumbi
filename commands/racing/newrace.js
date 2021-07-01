@@ -1,6 +1,8 @@
 module.exports = {
     name: 'newrace',
-    description: "this is a ping command!",
+    description: "Opens a race, you can choose which category you want to race (e.g: Any%, ATP, AA, AR).",
+    hidden: true,
+    guildOnly: true,
     execute(message, args){
         //TODO Implement help command
     }

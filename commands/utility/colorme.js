@@ -24,6 +24,7 @@ module.exports = {
   name: "colorme",
   description: "this command is used to give people individual color roles",
   guildOnly: true,
+  hidden: false,
   execute(message, args) {
     if (args[0] == undefined) {
       message.channel

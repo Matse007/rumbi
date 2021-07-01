@@ -1,6 +1,8 @@
 module.exports = {
     name: 'ready',
-    description: "this is a ping command!",
+    description: "Use this command when you're ready to race.",
+    hidden: true,
+    guildOnly: true,
     execute(message, args){
         //TODO Implement help command
     }

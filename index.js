@@ -26,9 +26,10 @@ var consoleChannel = "";
  * Initializing the command Collection. Note that all commands have to be moved in their respective subfolder. 
  */
  client.commands = new Discord.Collection();
-
+ client.commandFolders = [];
  const commandFolders = fs.readdirSync('./commands');
 
+ client.commandFolders = commandFolders;
 for (const folder of commandFolders) {
 	const commandFiles = fs.readdirSync(`./commands/${folder}`).filter(file => file.endsWith('.js'));
 	for (const file of commandFiles) {

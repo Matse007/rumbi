@@ -1,6 +1,8 @@
 module.exports = {
     name: 'forfeit',
-    description: "this is a ping command!",
+    description: "Use this command to forfeit the race.",
+    hidden: true,
+    guildOnly: true,
     execute(message, args){
         //TODO Implement command
     }

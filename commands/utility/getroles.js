@@ -4,6 +4,9 @@ module.exports = {
   name: "getroles",
   description:
     "This command is used to populate the json role file for the updated colorme command!",
+    permissions: 'MANAGE_GUILD',
+    hidden: false,
+    
   execute(message, args) {
     var rolelistJSON = JSON.parse(fs.readFileSync('./ressources/roleList.json', 'utf8'));
     message.guild.members.cache.each((user) => {

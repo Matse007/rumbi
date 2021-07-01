@@ -1,6 +1,8 @@
 module.exports = {
     name: 'ksarg',
     description: "For talking in the main channel of the server",
+    hidden: true,
+    guildOnly: true,
     execute(message, args){
         //TODO: Implement this command that allowing access can be granted dynamically. Probably through a JSON in the ressource folder.
         if(message.author.id == "78321950904033280" || message.author.id == "72182588885700608"|| message.author.id == "82799177439907840"){
