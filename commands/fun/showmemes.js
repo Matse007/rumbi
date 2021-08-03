@@ -7,7 +7,7 @@ module.exports = {
   guildOnly: true,
   hidden: true,
   execute(message, args) {
-      memes = JSON.parse(fs.readFileSync("./ressources/memes.json", "utf8"));
+    // memes = JSON.parse(fs.readFileSync("./ressources/memes.json", "utf8"));
     /* if (
       message.member.roles.cache.find((role) => (role.name = "Admins")) ||
       message.author.id == "72182588885700608" || message.author.id == "82799177439907840"

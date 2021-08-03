@@ -1,4 +1,5 @@
 var fs = require("fs");
+const Discord = require("discord.js");
 var colorRegex = /^#(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$/;
 var colorList = JSON.parse(fs.readFileSync("./ressources/colors.json", "utf8"));
 let rolelistJSON;
@@ -24,7 +25,26 @@ module.exports = {
   name: "colorme",
   description: "this command is used to give people individual color roles",
   guildOnly: true,
+  usage: `$colorme <color_here> | <color_here> is a color written in Hex (i.e. #32CD32) or text (red or yellow)\nExamples: \n\t$colorme #32CD32 \n\t$colorme green`,
   hidden: false,
+  helpFields: [
+    {
+      name: "Preset colors to choose from",
+      value:
+        "Use any of these colors if you need a color to choose from: \n red, green, blue, black, white, yellow, magenta, cyan, purple, orange, pink, lime, limegreen",
+    },
+    {
+      name: "Custom Hex Color",
+      value:
+        "Use this to find the perfect hex color for your name. \nColor Picker: https://www.google.com/search?q=color+picker",
+    },
+    {
+      name: "Delete Custom Color",
+      value:
+        "Type ($colorme delete) or ($colorme remove) to remove your custom color",
+    },
+  ],
+
   execute(message, args) {
     if (args[0] == undefined) {
       message.channel
@@ -134,7 +154,7 @@ module.exports = {
           "Please supply a color as text (one word) or as the Hex Value (i.e. #32CD32)"
         )
         .then((msg) => {
-          msg.delete({timeout:15000});
+          msg.delete({ timeout: 15000 });
         });
     }
   },

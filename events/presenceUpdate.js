@@ -1,12 +1,9 @@
-//const { Presence } = require("discord.js");
-//module.exports = (client) =>{
+var fs = require("fs");
+let cfg = JSON.parse(fs.readFileSync("./ressources/config.json", "utf8"));
 module.exports = {
-  name: 'presenceUpdate',
-  execute(oldPresence, newPresence, client){
-  
-    //Hardcoded guild not a good way of doing it, but works for now
-    //Guild ID for Hat in Time Server 78323416637116416
-    const guildid = "722374549089288195";
+  name: "presenceUpdate",
+  execute(oldPresence, newPresence, client) {
+    const guildid = cfg.streamingguilds.testing;
     guild = client.guilds.cache.get(guildid);
     //this requires that a streaming role does exist.
     role = guild.roles.cache.find((r) => r.name === "Streaming");

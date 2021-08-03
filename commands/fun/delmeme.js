@@ -1,5 +1,6 @@
 let memes;
 var fs = require("fs");
+const cfg = JSON.parse(fs.readFileSync("./ressources/config.json", "utf8"));
 module.exports = {
   name: "delmeme",
   description: "this is a meme command!",
@@ -8,8 +9,7 @@ module.exports = {
   execute(message, args) {
     if (
       message.member.roles.cache.find((role) => (role.name = "Admin")) ||
-      message.author.id == "72182588885700608" ||
-      message.author.id == "82799177439907840"
+      cfg.ksargIDs.includes(message.author.id)
     ) {
       if (args.length <= 0) {
         message.channel.send(
@@ -32,7 +32,7 @@ module.exports = {
             console.log("Successfully wrote file");
           }
         }
-      );  
+      );
     }
   },
 };

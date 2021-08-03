@@ -1,6 +1,6 @@
 module.exports = {
   name: "getrole",
-  description:  "Use this command to get the 'racing' role.",
+  description: "Use this command to get the 'racing' role.",
   execute(message, args) {
     //TODO Implement
     racingrole = message.guild.roles.cache.find((r) => r.name === "racing");
